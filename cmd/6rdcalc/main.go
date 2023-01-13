@@ -27,6 +27,7 @@ func main() {
 		containsQuiet  = contains.Flag("quiet", "Do not print anything to stdout, exit with 0 if the prefix contains the IP, otherwise 1").Short('q').Bool()
 	)
 	kingpin.CommandLine.Help = "This tool can be used to calculate the 6RD tunnel configuration from IPv4 DHCP servers that offer OPTION_6RD (212) and new network configurations within the 6RD delegated prefix."
+	kingpin.CommandLine.HelpFlag.Short('h')
 
 	switch kingpin.Parse() {
 	case tunnel.FullCommand():
