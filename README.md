@@ -99,6 +99,8 @@ false
 ## Configuration of dhclient
 
 ```
+option option-6rd code 212 = { integer 8, integer 8, ip6-address, array of ip-address };
+# OR
 option option-6rd code 212 = {
 	integer 8, integer 8,
 	unsigned integer 16, unsigned integer 16, unsigned integer 16, unsigned integer 16,
@@ -106,8 +108,8 @@ option option-6rd code 212 = {
 	array of ip-address
 };
 
-interface "ethX" {
-	request option-6rd;
+interface "eth0" {
+	also request option-6rd;
 }
 ```
 
